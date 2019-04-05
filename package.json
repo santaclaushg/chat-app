@@ -1,27 +1,20 @@
 {
-  "name": "chat-room",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.8.5",
-    "react-bootstrap": "^1.0.0-beta.6",
-    "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8",
-    "sass": "^1.17.3"
-  },
+  "name": "chat-app",
+  "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": "https://github.com/santaclaushg/chat-app.git",
+  "author": "santaclaushg <santaclaushg@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
 }
