@@ -32,15 +32,15 @@ export default function Profile() {
           <label htmlFor="twitter">
             <i className="fa fa-facebook fa-fw" aria-hidden="true" />
           </label>
-          <input name="twitter" type="text" value="mikeross" />
+          <input name="twitter" type="text" defaultValue="mikeross" />
           <label htmlFor="twitter">
             <i className="fa fa-twitter fa-fw" aria-hidden="true" />
           </label>
-          <input name="twitter" type="text" value="ross81" />
+          <input name="twitter" type="text" defaultValue="ross81" />
           <label htmlFor="twitter">
             <i className="fa fa-instagram fa-fw" aria-hidden="true" />
           </label>
-          <input name="twitter" type="text" value="mike.ross" />
+          <input name="twitter" type="text" defaultValue="mike.ross" />
         </div>
       </div>
     </div>
