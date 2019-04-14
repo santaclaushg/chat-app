@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import writeUserData from '../../../FireBase/firebase-operation';
+import 'font-awesome/css/font-awesome.min.css';
 export default function MessageInput() {
 
   const [send, setSend] = useState(0);
