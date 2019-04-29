@@ -6,9 +6,9 @@ export default function MessageInput() {
   const [send, setSend] = useState(0);
 
   useEffect(() => {
-    writeUserData('123', 'giap', 'santaclaushg@gmail.com', '');
-    console.log(`done`);
-    console.log(send);
+    
+    // console.log(`done`);
+    // console.log(send);
   })
   return (
     <div className="message-input">

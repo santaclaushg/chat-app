@@ -1,14 +1,13 @@
-import React, { useState, useContext } from 'react';
-import AppContext from './components/ReactContext/react-context';
+import React from 'react';
 import MainApp from './components/MainApp/MainApp';
 import Authentication from './components/Authentication/Authentication';
+import userAuthObserver from './components/utils/user-auth-observer';
 import './App.css';
 
 export default function App() {
-  const context = useContext(AppContext);
-  const [login, setLogin] = useState(false);
+  const isAuth = userAuthObserver();
 
   return (
-    login ? <MainApp /> : <Authentication />
+    isAuth ? <MainApp /> : <Authentication />
   );
 }
