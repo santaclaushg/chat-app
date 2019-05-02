@@ -1,2 +1,3 @@
 Chat-app
-Usage: Yarn dev
+Usage: yarn dev
+For client: yarn client
