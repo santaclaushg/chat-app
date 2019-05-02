@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './style/main.css';
 import './style/util.css';
-import { createUserWithEmailAndPassword } from '../FireBase/firebase-auth';
-import { createChatUser } from '../FireBase/firebase-database';
+import { createUserWithEmailAndPassword } from '../../FireBase/firebase-auth';
+import { createChatUser } from '../../FireBase/firebase-database';
 import 'font-awesome/css/font-awesome.min.css';
 import 'material-design-iconic-font/dist/css/material-design-iconic-font.min.css';
-// import { Route, Switch } from "react-router-dom";
 
 export default function SignUp({ isShow, onToggleForm }) {
+  const [clickUsername, setClickUsername] = useState(false);
   const [clickEmail, setClickEmail] = useState(false);
   const [clickPass, setClickPass] = useState(false);
   const [clickConfirmedPass, setClickConfirmedPass] = useState(false);
@@ -21,8 +21,6 @@ export default function SignUp({ isShow, onToggleForm }) {
     e.preventDefault();
     if (confirmedPassword !== password){
       alert("The confirmed password is not matched the previous password");
-      console.log(password);
-      console.log(confirmedPassword);
       return;
     }
 
@@ -55,6 +53,21 @@ export default function SignUp({ isShow, onToggleForm }) {
               <span className="login100-form-title p-b-48">
                 <i className="zmdi zmdi-font"></i>
               </span>
+              
+              <div className="wrap-input100 validate-input">
+                <input 
+                  className={clickUsername ? "input100 has-val" : "input100"} 
+                  type="text" 
+                  name="username"
+                  key="username"
+                  onClick={() => setClickUsername(true)}
+                  onChange={(e) => setName(e.target.value)}
+                  onBlur={(e) => e.target.value === "" ? setClickUsername(false) : setClickUsername(true)}
+                />
+                <span className="focus-input100"
+                  data-placeholder="Username">
+                </span>
+              </div>
 
               <div className="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
                 <input 
@@ -92,8 +105,8 @@ export default function SignUp({ isShow, onToggleForm }) {
                 </span>
                 <input className={clickConfirmedPass ? "input100 has-val" : "input100"} 
                   type="password" 
-                  name="pass" 
-                  key="pass"
+                  name="confirmedPass" 
+                  key="confirmedPass"
                   onClick={() => setClickConfirmedPass(true)}
                   onChange={(e) => setConfirmedPassword(e.target.value)}
                   onBlur={(e) => e.target.value === "" ? setClickConfirmedPass(false) : setClickConfirmedPass(true)}/>

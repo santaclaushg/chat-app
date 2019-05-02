@@ -1,5 +1,5 @@
 import React from "react";
-import { signOutFirebaseAccount } from '../../../FireBase/firebase-auth';
+import { signOutFirebaseAccount } from '../../../../FireBase/firebase-auth';
 
 export default function BottomBar() {
 

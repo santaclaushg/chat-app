@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style/main.css';
 import './style/util.css';
-import { signInWithEmailAndPassword } from '../FireBase/firebase-auth';
+import { signInWithEmailAndPassword } from '../../FireBase/firebase-auth';
 import 'font-awesome/css/font-awesome.min.css';
 import 'material-design-iconic-font/dist/css/material-design-iconic-font.min.css';
 

@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import AppContext from 'components/ReactContext/react-context.js';
+
 
 export default function Profile() {
+  const context = useContext(AppContext);
+  const imageUrlUser = context.currentChatUser.imageUrl;
+  const userName = context.currentChatUser.username;
+
   return (
     <div id="profile">
       <div className="wrap">
         <img
           id="profile-img"
-          src="http://emilcarlsson.se/assets/mikeross.png"
+          src={imageUrlUser ? imageUrlUser : "https://via.placeholder.com/150"}
           className="online"
           alt=""
         />
-        <p>Mike Ross</p>
+        <p>{userName}</p>
         <i className="fa fa-chevron-down expand-button" aria-hidden="true" />
         <div id="status-options">
           <ul>
