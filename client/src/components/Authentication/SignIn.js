@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import './style/main.css';
-import './style/util.css';
 import { signInWithEmailAndPassword } from '../../FireBase/firebase-auth';
-import 'font-awesome/css/font-awesome.min.css';
-import 'material-design-iconic-font/dist/css/material-design-iconic-font.min.css';
 
 export default function SignIn({ isShow, onToggleForm }) {
-  const [clickEmail, setClickEmail] = useState(false);
-  const [clickPass, setClickPass] = useState(false);
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +21,42 @@ export default function SignIn({ isShow, onToggleForm }) {
 
   return(
     <div className="Authentication-sign-in">
-      <div className="limiter">
+    <div class={isShow ? "face face-front" : "disappear"}>
+      <div class="content">
+        <h2>Sign in</h2>
+        <form onSubmit={e => e.preventDefault()}>
+          <div class="field-wrapper">
+            <input 
+            type="text" 
+            name="username" 
+            placeholder="username" 
+            onChange={e => setEmail(e.target.value)}
+            />
+            <label>username</label>
+          </div>
+          <div class="field-wrapper">
+            <input 
+            type="password" 
+            name="password" 
+            placeholder="password" 
+            autocomplete="new-password"
+            onChange={e => setPassword(e.target.value)}
+            />
+            <label>password</label>
+          </div>
+          <div class="field-wrapper">
+            <input 
+            type="submit" 
+            onClick={onSignIn}
+            />
+          </div>
+          <span class="psw" onclick="showForgotPassword()">Forgot Password?</span>
+          <span class="signup" onClick={onToggleForm}>Not a user?  Sign up</span>
+          </form>
+      </div>
+    </div>
+    
+      {/* <div className="limiter">
         <div className={isShow ? "container-login100" : "container-login100 disappear" }>
           <div className="wrap-login100">
             <form className="login100-form validate-form">
@@ -97,7 +125,7 @@ export default function SignIn({ isShow, onToggleForm }) {
           </div>
         </div>
       </div>
-	  <div id="dropDownSelect1"></div>
+	  <div id="dropDownSelect1"></div> */}
     </div>
   );
 }

@@ -5,7 +5,6 @@ import {
   getChatUIDMatchTwoUser
 } from '../../../../FireBase/firebase-database';
 import valueEventListener from 'utils/value-event-listener';
-// import '../../../../main-app.css';
 
 export default function Contacts() {
   const { currentChatUser, lastChat } = useContext(AppContext);

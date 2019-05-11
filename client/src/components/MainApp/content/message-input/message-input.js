@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import AppContext from '../../../ReactContext/react-context';
 import pushNewMessage from '../../../../FireBase/firebase-database';
 
-import 'font-awesome/css/font-awesome.min.css';
+
 export default function MessageInput({ chatID }) {
   const { currentChatUser } = useContext(AppContext);
   const [msg, setMsg] = useState("");

@@ -5,7 +5,6 @@ import AppContext from '../ReactContext/react-context';
 import { getCurrentUser } from '../../FireBase/firebase-database';
 import valueEventOnceListener from '../../utils/value-event-once-listener';
 import valueEventListener from '../../utils/value-event-listener';
-// import './main-app.css';
 
 export default function MainApp() {
   const { uid } = getCurrentUser();
