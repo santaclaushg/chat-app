@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AppContext from '../../../ReactContext/react-context';
-import pushNewMessage from '../../../../FireBase/firebase-database';
+import { pushNewMessage } from '../../../../FireBase/firebase-database';
 
 
 export default function MessageInput({ chatID }) {
@@ -19,8 +19,8 @@ export default function MessageInput({ chatID }) {
 
   useEffect(() => {
     
-    // console.log(`done`);
-    // console.log(message);
+    console.log(`done`);
+    console.log(msg);
   })
   return (
     <div className="message-input">
