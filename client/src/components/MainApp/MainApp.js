@@ -1,6 +1,6 @@
 import React from 'react';
 import SidePanel from './side-panel/side-panel';
-import Content from '../MainApp/content/content';
+import ContentChat from './content/content-chat';
 import AppContext from '../ReactContext/react-context';
 import { getCurrentUser } from '../../FireBase/firebase-database';
 import valueEventOnceListener from '../../utils/value-event-once-listener';
@@ -16,7 +16,7 @@ export default function MainApp() {
   return (
     <AppContext.Provider value={context}>
       <SidePanel />
-      <Content />
+      <ContentChat />
     </AppContext.Provider>
   );
 }

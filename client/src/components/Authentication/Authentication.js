@@ -11,9 +11,11 @@ export default function Authentication() {
   }
 
   return(
-    <div className="container">
-      <SignIn isShow={form === "SignIn"} onToggleForm={onToggleForm} />
-      <SignUp isShow={form === "SignUp"} onToggleForm={onToggleForm} />
+    <div className="wrapper">
+      <div className={form === 'SignIn'? `rec-prism sign-in` : `rec-prism sign-up`}>
+        <SignIn isShow={form === "SignIn"} onToggleForm={onToggleForm} />
+        <SignUp isShow={form === "SignUp"} onToggleForm={onToggleForm} />
+      </div>
     </div>
   );
 }

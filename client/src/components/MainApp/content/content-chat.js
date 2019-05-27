@@ -8,7 +8,7 @@ export default function Content() {
   const { lastChat } = useContext(AppContext);
 
   return (
-    <div className="content">
+    <div className="content-chat">
       <ContactProfile />
       <Messages chatID={lastChat.chatUID}/>
       <MessageInput chatID={lastChat.chatUID}/>

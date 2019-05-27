@@ -10,7 +10,7 @@ export default function SignIn({ isShow, onToggleForm }) {
     const userInformation = {email, password};
     console.log(userInformation);
     signInWithEmailAndPassword(userInformation)
-      .then(signInSuccessCallBack)
+      .then(signInSuccessCallBack) 
       .catch(error => alert(error));
 
     function signInSuccessCallBack() {
@@ -19,9 +19,12 @@ export default function SignIn({ isShow, onToggleForm }) {
     }
   }
 
+  const styles = {
+    transform: 'translateZ(-100px) rotateY( -90deg)'
+  }
+
   return(
-    <div className="Authentication-sign-in">
-    <div class={isShow ? "face face-front" : "disappear"}>
+    <div class="face face-front">
       <div class="content">
         <h2>Sign in</h2>
         <form onSubmit={e => e.preventDefault()}>
@@ -54,8 +57,6 @@ export default function SignIn({ isShow, onToggleForm }) {
           <span class="signup" onClick={onToggleForm}>Not a user?  Sign up</span>
           </form>
       </div>
-    </div>
-    
       {/* <div className="limiter">
         <div className={isShow ? "container-login100" : "container-login100 disappear" }>
           <div className="wrap-login100">
@@ -127,5 +128,6 @@ export default function SignIn({ isShow, onToggleForm }) {
       </div>
 	  <div id="dropDownSelect1"></div> */}
     </div>
+    
   );
 }

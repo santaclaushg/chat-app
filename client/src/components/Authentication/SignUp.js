@@ -3,10 +3,6 @@ import { createUserWithEmailAndPassword } from '../../FireBase/firebase-auth';
 import { createChatUser } from '../../FireBase/firebase-database';
 
 export default function SignUp({ isShow, onToggleForm }) {
-  const [clickUsername, setClickUsername] = useState(false);
-  const [clickEmail, setClickEmail] = useState(false);
-  const [clickPass, setClickPass] = useState(false);
-  const [clickConfirmedPass, setClickConfirmedPass] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,17 +33,28 @@ export default function SignUp({ isShow, onToggleForm }) {
     }
   }
 
+  const styles = {
+    transform: 'translateZ(-100px)'
+  }
   return(
-    <div className="Authentication-sign-up">
-      <div class={isShow ? "face face-right" : ""}>
+      <div class="face face-right">
         <div class="content">
           <h2>Sign up</h2>
           <form onsubmit="event.preventDefault()">
             <div class="field-wrapper">
               <input 
               type="text" 
+              name="username" 
+              placeholder="email" 
+              onChange={e => setName(e.target.value)}/>
+              <label>username</label>
+            </div>
+            <div class="field-wrapper">
+              <input 
+              type="text" 
               name="email" 
-              placeholder="email" />
+              placeholder="email" 
+              onChange={e => setEmail(e.target.value)}/>
               <label>e-mail</label>
             </div>
             <div class="field-wrapper">
@@ -56,6 +63,7 @@ export default function SignUp({ isShow, onToggleForm }) {
               name="password" 
               placeholder="password" 
               autocomplete="new-password" 
+              onChange={e => setPassword(e.target.value)}
               />
               <label>password</label>
             </div>
@@ -65,6 +73,7 @@ export default function SignUp({ isShow, onToggleForm }) {
               name="password2" 
               placeholder="password" 
               autocomplete="new-password" 
+              onChange={e => setConfirmedPassword(e.target.value)}
               />
               <label>re-enter password</label>
             </div>
@@ -77,8 +86,6 @@ export default function SignUp({ isShow, onToggleForm }) {
             <span class="singin" onClick={onToggleForm}>Already a user?  Sign in</span>
           </form>
         </div>
-      </div>
-    
       {/* <div className="limiter">
         <div className={isShow ? "container-login100" : "container-login100 disappear"}>
           <div className="wrap-login100">
@@ -179,6 +186,7 @@ export default function SignUp({ isShow, onToggleForm }) {
         </div>
       </div>
 	  <div id="dropDownSelect1"></div> */}
-    </div>
+      </div>
+    
   );
 }

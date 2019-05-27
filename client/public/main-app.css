@@ -7,7 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #dbfffa;
+  background: #E6EAEA;
   font-family: "proxima-nova", "Source Sans Pro", sans-serif;
   font-size: 1em;
   letter-spacing: 0.1px;
@@ -15,10 +15,6 @@ body {
   text-rendering: optimizeLegibility;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   -webkit-font-smoothing: antialiased;
-}
-
-#root {
-  width: 1000px;
 }
 
 #frame {
@@ -502,7 +498,7 @@ body {
     display: none;
   }
 }
-#frame .content {
+#frame .content-chat {
   float: right;
   width: 60%;
   height: 100%;
@@ -510,64 +506,65 @@ body {
   position: relative;
 }
 @media screen and (max-width: 735px) {
-  #frame .content {
+  #frame .content-chat {
     width: calc(100% - 58px);
     min-width: 300px !important;
   }
 }
 @media screen and (min-width: 900px) {
-  #frame .content {
+  #frame .content-chat {
     width: calc(100% - 340px);
   }
 }
-#frame .content .contact-profile {
+#frame .content-chat .contact-profile {
   width: 100%;
   height: 60px;
   line-height: 60px;
   background: #f5f5f5;
 }
-#frame .content .contact-profile img {
+#frame .content-chat .contact-profile img {
   width: 40px;
   border-radius: 50%;
   float: left;
   margin: 9px 12px 0 9px;
 }
-#frame .content .contact-profile p {
+#frame .content-chat .contact-profile p {
   float: left;
 }
-#frame .content .contact-profile .social-media {
+#frame .content-chat .contact-profile .social-media {
   float: right;
 }
-#frame .content .contact-profile .social-media i {
+#frame .content-chat .contact-profile .social-media i {
   margin-left: 14px;
   cursor: pointer;
 }
-#frame .content .contact-profile .social-media i:nth-last-child(1) {
+#frame .content-chat .contact-profile .social-media i:nth-last-child(1) {
   margin-right: 20px;
 }
-#frame .content .contact-profile .social-media i:hover {
+#frame .content-chat .contact-profile .social-media i:hover {
   color: #435f7a;
 }
-#frame .content .messages {
+#frame .content-chat .messages {
   height: auto;
   min-height: calc(100% - 93px);
   max-height: calc(100% - 93px);
   overflow-y: scroll;
   overflow-x: hidden;
+  border-right: 2px dotted #f5f5f5;
 }
 @media screen and (max-width: 735px) {
-  #frame .content .messages {
+  #frame .content-chat .messages {
     max-height: calc(100% - 105px);
   }
 }
-#frame .content .messages::-webkit-scrollbar {
+#frame .content-chat .messages::-webkit-scrollbar {
   width: 8px;
   background: transparent;
 }
-#frame .content .messages::-webkit-scrollbar-thumb {
+#frame .content-chat .messages::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
 }
-#frame .content .messages ul li {
+#frame .content-chat .messages ul li {
   display: inline-block;
   clear: both;
   float: left;
@@ -575,30 +572,30 @@ body {
   width: calc(100% - 25px);
   font-size: 0.9em;
 }
-#frame .content .messages ul li:nth-last-child(1) {
+#frame .content-chat .messages ul li:nth-last-child(1) {
   margin-bottom: 20px;
 }
-#frame .content .messages ul li.sent img {
+#frame .content-chat .messages ul li.sent img {
   margin: 6px 8px 0 0;
 }
-#frame .content .messages ul li.sent p {
+#frame .content-chat .messages ul li.sent p {
   background: #435f7a;
   color: #f5f5f5;
 }
-#frame .content .messages ul li.replies img {
+#frame .content-chat .messages ul li.replies img {
   float: right;
   margin: 6px 0 0 8px;
 }
-#frame .content .messages ul li.replies p {
+#frame .content-chat .messages ul li.replies p {
   background: #f5f5f5;
   float: right;
 }
-#frame .content .messages ul li img {
+#frame .content-chat .messages ul li img {
   width: 22px;
   border-radius: 50%;
   float: left;
 }
-#frame .content .messages ul li p {
+#frame .content-chat .messages ul li p {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 20px;
@@ -606,20 +603,20 @@ body {
   line-height: 130%;
 }
 @media screen and (min-width: 735px) {
-  #frame .content .messages ul li p {
+  #frame .content-chat .messages ul li p {
     max-width: 300px;
   }
 }
-#frame .content .message-input {
+#frame .content-chat .message-input {
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 99;
 }
-#frame .content .message-input .wrap {
+#frame .content-chat .message-input .wrap {
   position: relative;
 }
-#frame .content .message-input .wrap input {
+#frame .content-chat .message-input .wrap input {
   font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
   float: left;
   border: none;
@@ -629,14 +626,14 @@ body {
   color: #32465a;
 }
 @media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap input {
+  #frame .content-chat .message-input .wrap input {
     padding: 15px 32px 16px 8px;
   }
 }
-#frame .content .message-input .wrap input:focus {
+#frame .content-chat .message-input .wrap input:focus {
   outline: none;
 }
-#frame .content .message-input .wrap .attachment {
+#frame .content-chat .message-input .wrap .attachment {
   position: absolute;
   right: 60px;
   z-index: 4;
@@ -647,15 +644,15 @@ body {
   cursor: pointer;
 }
 @media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap .attachment {
+  #frame .content-chat .message-input .wrap .attachment {
     margin-top: 17px;
     right: 65px;
   }
 }
-#frame .content .message-input .wrap .attachment:hover {
+#frame .content-chat .message-input .wrap .attachment:hover {
   opacity: 1;
 }
-#frame .content .message-input .wrap button {
+#frame .content-chat .message-input .wrap button {
   float: right;
   border: none;
   width: 50px;
@@ -665,13 +662,224 @@ body {
   color: #f5f5f5;
 }
 @media screen and (max-width: 735px) {
-  #frame .content .message-input .wrap button {
+  #frame .content-chat .message-input .wrap button {
     padding: 16px 0;
   }
 }
-#frame .content .message-input .wrap button:hover {
+#frame .content-chat .message-input .wrap button:hover {
   background: #435f7a;
 }
-#frame .content .message-input .wrap button:focus {
+#frame .content-chat .message-input .wrap button:focus {
   outline: none;
+}
+/*--------------------------------------------------------------*/
+/*--------------Theme login logout sign up css -----------------*/
+/*--------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 14px;
+  /* background: #f6fffd; */
+  padding: 20px;
+  /* text-align: center; */
+}
+#frame .wrapper {
+  width: 250px;
+  height: 350px;
+  margin: 60px auto;
+  perspective: 600px;
+  text-align: left;
+}
+#frame .wrapper .rec-prism {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 0.5s ease-in;
+}
+#frame .wrapper .sign-in {
+    transform: translateZ(-100px);
+}
+#frame .wrapper .sign-up {
+    transform: translateZ(-100px) rotateY( -90deg);
+}
+#frame .wrapper .rec-prism .face {
+  position: absolute;
+  width: 250px;
+  height: 390px;
+  padding: 20px;
+  background: rgba(250, 250, 250, 0.96);
+  border: 3px solid #07ad90;
+  border-radius: 3px;
+}
+#frame .wrapper .rec-prism .face .content {
+  color: #666;
+}
+#frame .wrapper .rec-prism .face .content h2 {
+  font-size: 1.2em;
+  color: #07ad90;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper {
+  margin-top: 30px;
+  position: relative;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.85em;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all ease-in 0.25s;
+  color: #999;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"], #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"], #frame .wrapper .rec-prism .face .content .field-wrapper input[type="submit"], #frame .wrapper .rec-prism .face .content .field-wrapper textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]:focus, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]:focus, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="submit"]:focus, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:focus {
+  outline: none;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"], #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"], #frame .wrapper .rec-prism .face .content .field-wrapper textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  line-height: 2em;
+  border-bottom: 1px solid #07ad90;
+  color: #666;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]::-webkit-input-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]::-webkit-input-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper textarea::-webkit-input-placeholder {
+  opacity: 0;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]::-moz-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]::-moz-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper textarea::-moz-placeholder {
+  opacity: 0;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]:-ms-input-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]:-ms-input-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:-ms-input-placeholder {
+  opacity: 0;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]:-moz-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]:-moz-placeholder, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:-moz-placeholder {
+  opacity: 0;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]:focus + label, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]:focus + label, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:focus + label, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="text"]:not(:placeholder-shown) + label, #frame .wrapper .rec-prism .face .content .field-wrapper input[type="password"]:not(:placeholder-shown) + label, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+  top: -35%;
+  color: #42509e;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  background: #07ad90;
+  line-height: 2em;
+  color: #fff;
+  border: 1px solid #07ad90;
+  border-radius: 3px;
+  padding: 5px;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="submit"]:hover {
+  opacity: 0.9;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper input[type="submit"]:active {
+  transform: scale(0.96);
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper textarea {
+  resize: none;
+  line-height: 1em;
+}
+#frame .wrapper .rec-prism .face .content .field-wrapper textarea:focus + label, #frame .wrapper .rec-prism .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+  top: -25%;
+}
+#frame .wrapper .rec-prism .face .thank-you-msg {
+  position: absolute;
+  width: 200px;
+  height: 130px;
+  text-align: center;
+  font-size: 2em;
+  color: #07ad90;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+#frame .wrapper .rec-prism .face .thank-you-msg:after {
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 25px;
+  border: 10px solid #07ad90;
+  border-right: 0;
+  border-top: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  -webkit-animation: success ease-in 0.15s forwards;
+  animation: success ease-in 0.15s forwards;
+  animation-delay: 2.5s;
+}
+#frame .wrapper .rec-prism .face-front {
+  transform: rotateY(0deg) translateZ(125px);
+}
+#frame .wrapper .rec-prism .face-top {
+  height: 250px;
+  transform: rotateX(90deg) translateZ(125px);
+}
+#frame .wrapper .rec-prism .face-back {
+  transform: rotateY(180deg) translateZ(125px);
+}
+#frame .wrapper .rec-prism .face-right {
+  transform: rotateY(90deg) translateZ(125px);
+}
+#frame .wrapper .rec-prism .face-left {
+  transform: rotateY(-90deg) translateZ(125px);
+}
+#frame .wrapper .rec-prism .face-bottom {
+  height: 250px;
+  transform: rotateX(-90deg) translateZ(225px);
+}
+#frame .wrapper .nav {
+  margin: 20px 0;
+  padding: 0;
+}
+#frame .wrapper .nav li {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 1em;
+  margin: 0 10px;
+  color: #42509e;
+  position: relative;
+  cursor: pointer;
+}
+#frame .wrapper .nav li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  border-bottom: 1px solid #42509e;
+  transition: all ease-in 0.25s;
+}
+#frame .wrapper .nav li:hover:after {
+  width: 100%;
+}
+#frame .wrapper .psw, .signup, .singin {
+  display: block;
+  margin: 20px 0;
+  font-size: 0.75em;
+  text-align: center;
+  color: #42509e;
+  cursor: pointer;
+}
+#frame .wrapper small {
+  font-size: 0.7em;
+}
+@-webkit-keyframes success {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
 }
