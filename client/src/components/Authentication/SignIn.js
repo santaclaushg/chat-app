@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from '../../FireBase/firebase-auth';
 
-export default function SignIn({ isShow, onToggleForm }) {
+export default function SignIn({ onToggleForm }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,16 +19,12 @@ export default function SignIn({ isShow, onToggleForm }) {
     }
   }
 
-  const styles = {
-    transform: 'translateZ(-100px) rotateY( -90deg)'
-  }
-
   return(
-    <div class="face face-front">
-      <div class="content">
+    <div className="face face-front">
+      <div className="content">
         <h2>Sign in</h2>
         <form onSubmit={e => e.preventDefault()}>
-          <div class="field-wrapper">
+          <div className="field-wrapper">
             <input 
             type="text" 
             name="username" 
@@ -37,24 +33,24 @@ export default function SignIn({ isShow, onToggleForm }) {
             />
             <label>username</label>
           </div>
-          <div class="field-wrapper">
+          <div className="field-wrapper">
             <input 
             type="password" 
             name="password" 
             placeholder="password" 
-            autocomplete="new-password"
+            autoComplete="new-password"
             onChange={e => setPassword(e.target.value)}
             />
             <label>password</label>
           </div>
-          <div class="field-wrapper">
+          <div className="field-wrapper">
             <input 
             type="submit" 
             onClick={onSignIn}
             />
           </div>
-          <span class="psw" onclick="showForgotPassword()">Forgot Password?</span>
-          <span class="signup" onClick={onToggleForm}>Not a user?  Sign up</span>
+          <span className="psw">Forgot Password?</span>
+          <span className="signup" onClick={onToggleForm}>Not a user?  Sign up</span>
           </form>
       </div>
       {/* <div className="limiter">

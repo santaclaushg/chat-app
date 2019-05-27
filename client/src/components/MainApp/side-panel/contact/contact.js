@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AppContext from '../../../ReactContext/react-context';
 import {
   updateAtAddressWithValue,
@@ -10,11 +10,16 @@ export default function Contacts() {
   const { currentChatUser, lastChat } = useContext(AppContext);
   const contacts = valueEventListener(`Users/`);
 
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    return () => abortController.abort();
+  }, []);
   function renderContacts(contact) {
     async function onSelectTargetUser() {
       const chatUID = await getChatUIDMatchTwoUser(currentChatUser, contact);
       const update = {
-        username: contacts.username,
+        username: contact.username,
         imageUrl: contact.imageUrl,
         chatUID
       };

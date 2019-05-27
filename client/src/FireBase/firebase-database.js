@@ -4,11 +4,11 @@ import 'firebase/database';
 export default function firebaseDatabaseRef(childNode) {
   return firebase.database().ref(childNode);
 }
-export function getValueOnce(addressString) {
-  const snapshot = firebase
-                      .database()
-                      .ref(addressString)
-                      .once("value");
+export async function getValueOnce(addressString) {
+  const snapshot = await firebase
+    .database()
+    .ref(addressString)
+    .once("value");
   return snapshot.val();
 }
 
@@ -47,9 +47,9 @@ export function updateAtAddressWithValue(addressString, value) {
   update[addressString] = value;
 
   return firebase
-          .database()
-          .ref()
-          .update(update);
+    .database()
+    .ref()
+    .update(update);
 }
 export async function getChatUIDMatchTwoUser(currentChatUser, contact) {
   const chatedUser = await getValueOnce(`UserRooms/${currentChatUser.id}`);
